@@ -1,13 +1,12 @@
-import * as express from 'express';
-import {Request,Response} from 'express';
+import {Router} from 'express';
 import { add,getall,gets,upd,dlt } from "../controller/todocontroller";
-const router = express.Router()
+const router = Router()
 // router.get('/api/todo',(req:Request,res:Response)=>{
 //     res.send("hey there");
 // })
-router.post('/api/todo',add);
-router.get('/api/todo',getall);
-router.get('/api/todo/:id',gets);
-router.put('/api/todo/:id',upd);
-router.delete('/api/todo/:id',dlt);
+router.post('/api/todo',add);//route to insert 
+router.get('/api/todo',getall);//route to get all data
+router.get('/api/todo/:id',gets);//route to get single record
+router.put('/api/todo/:id',upd);//route to update
+router.delete('/api/todo/:id',dlt);//route to delete
 export{router as TodoRouter}
